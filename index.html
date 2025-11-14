@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Popular - Sandwichería Gourmet</title>
+    <link rel="stylesheet" href="stylss.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>🍔 La Popular 🍟</h1>
+        <p>Los mejores sándwiches y lomitos de San Miguel de Tucumán y Banda del Río Salí.</p>
+        <nav class="nav-quick-access">
+            <a href="#sandwiches">Sandwiches</a>
+            <a href="#lomitos">Lomitos</a>
+            <a href="#hamburguesas">Hamburguesas</a>
+            <a href="#cart-section" class="cart-button">🛒 Carrito (<span id="cart-count">0</span>)</a>
+        </nav>
+    </header>
+    
+    <main>
+        
+        <section id="menu" class="menu-section">
+            
+            <h2 id="sandwiches">🥪 Sandwiches</h2>
+            <div class="product-grid">
+                <div class="product-card" data-product="sandwich-comun" data-price="9000">
+                    <h3>Sándwich Común</h3>
+                    <p class="description">El clásico de siempre, con jamón, queso, huevo y los mejores aderezos.</p>
+                    <p class="price">$9000</p>
+                    <button class="add-to-cart">Agregar</button>
+                </div>
+                <div class="product-card" data-product="sandwich-especial" data-price="12000">
+                    <h3>Sándwich Especial</h3>
+                    <p class="description">Doble porción de todo, panceta, y un toque de salsa secreta.</p>
+                    <p class="price">$12000</p>
+                    <button class="add-to-cart">Agregar</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="lomitos">🥩 Súper Lomitos</h2>
+            <div class="product-grid">
+                <div class="product-card" data-product="super-lomito" data-price="10300">
+                    <h3>Súper Lomito</h3>
+                    <p class="description">Carne de ternera tierna, jamón, queso, lechuga, tomate y mayonesa casera.</p>
+                    <p class="price">$10300</p>
+                    <button class="add-to-cart">Agregar</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2 id="hamburguesas">🍔 Hamburguesas con Papas</h2>
+            <div class="product-grid">
+                <div class="product-card" data-product="hamburguesa-comun" data-price="8000">
+                    <h3>Hamburguesa Común + Papas</h3>
+                    <p class="description">Carne, queso, tomate, lechuga y un puñado de papas fritas.</p>
+                    <p class="price">$8000</p>
+                    <button class="add-to-cart">Agregar</button>
+                </div>
+                <div class="product-card" data-product="hamburguesa-popular" data-price="10000">
+                    <h3>Hamburguesa "Popular" + Papas</h3>
+                    <p class="description">Doble carne, cheddar fundido, cebolla caramelizada y papas grandes.</p>
+                    <p class="price">$10000</p>
+                    <button class="add-to-cart">Agregar</button>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section id="cart-section" class="cart-checkout-section">
+            <h2 id="carrito-title">🛒 Tu Pedido</h2>
+            <div id="cart-items" class="cart-items">
+                </div>
+            <div class="cart-summary">
+                <p>Total: <span id="cart-total">$0</span></p>
+            </div>
+            
+            <form id="checkout-form" class="checkout-form">
+                <h3>Datos de Envío</h3>
+                <input type="text" id="client-name" placeholder="Tu Nombre" required>
+                <input type="text" id="client-address" placeholder="Tu Dirección de Envío" required>
+                
+                <p class="delivery-note">📍 **Envíos** en San Miguel de Tucumán y Banda del Río Salí.</p>
+
+                <div id="final-drinks-offer">
+                    </div>
+
+                <button type="submit" id="pay-button" disabled>Confirmar Pedido y Pagar</button>
+            </form>
+            
+            <p class="delivery-note after-payment-note">📍 **Envíos** únicamente en San Miguel de Tucumán y Banda del Río Salí. ¡Gracias por elegirnos!</p>
+        </section>
+
+    </main>
+
+    <div id="customize-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 id="modal-product-name">Personalizar Producto</h3>
+            <p>Elige tus agregados:</p>
+            
+            <div class="options-group">
+                <label><input type="checkbox" data-extra="queso" data-price="1000"> + Queso Adicional ($1000)</label>
+                <label><input type="checkbox" data-extra="papas" data-price="2000"> + Papas Adicionales ($2000)</label>
+            </div>
+            
+            <h4>Bebidas</h4>
+            <div class="options-group">
+                <label><input type="radio" name="drink" data-extra="gaseosa-2l" data-price="5000"> Gaseosa 2Lt ($5000)</label>
+                <label><input type="radio" name="drink" data-extra="gaseosa-lata" data-price="2000"> Lata de Gaseosa ($2000)</label>
+                <label><input type="radio" name="drink" data-extra="cerveza" data-price="2500"> Cerveza ($2500)</label>
+                <label><input type="radio" name="drink" data-extra="ninguna" checked> Dejar por Defecto (Sin bebida)</label>
+            </div>
+            
+            <button id="confirm-customization">Añadir al Carrito</button>
+        </div>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
